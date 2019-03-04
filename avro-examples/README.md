@@ -66,10 +66,10 @@ Avro file has a schema, and Avro data itself is not tagged with type information
 | -----------------| -------------------| -------------------------------------------------------------------------------- 
 | Payment1 | Payment1<br> OR <br>Not Specified  | {"id": "ABC", "amount": 900.0}<br>{"id": "DEF", "amount": 200.0}<br>{"id": "GHI", "amount": 300.0}
 | Payment1 | Payment2 | {"id": "ABC", "amount": 900.0, "region": "NOWHERE"}<br>{"id": "DEF", "amount": 200.0, "region": "NOWHERE"}<br>{"id": "GHI", "amount": 300.0, "region": "NOWHERE"}
-| Payment1 | Payment3 | Exception with message: org.apache.avro.AvroTypeException: Found com.example.kafka.Payment1, expecting com.example.kafka.Payment3, missing required field region
+| Payment1 | Payment3 | Exception with message:<br> &nbsp;&nbsp;org.apache.avro.AvroTypeException: Found com.example.kafka.Payment1,<br>&nbsp;&nbsp;expecting com.example.kafka.Payment3, missing required field region
 | Payment2 | Payment1 | {"id": "ABC", "amount": 900.0}<br>{"id": "DEF", "amount": 200.0}<br>{"id": "GHI", "amount": 300.0}
 | Payment2 | Payment2<br> OR <br>Not Specified | {"id": "ABC", "amount": 900.0, "region": "Tokyo"}<br>{"id": "DEF", "amount": 200.0, "region": null}<br>{"id": "GHI", "amount": 300.0, "region": "NOWHERE"}
-| Payment2 | Payment3 | Exception with message: org.apache.avro.AvroTypeException: Found null, expecting string 
+| Payment2 | Payment3 | Exception with message:<br>&nbsp;&nbsp; org.apache.avro.AvroTypeException: Found null, expecting string 
 
 
 # Etc
